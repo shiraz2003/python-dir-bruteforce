@@ -4,6 +4,9 @@ A simple Python-based tool to brute-force hidden directories and files on a web 
  
   ## 🚀 Features
 Checks for common directories and files on a web server.  
+
 Uses a customizable wordlist. 
+
 Fast scanning with optional multithreading (coming soon). 
+
 Simple, clean command-line interface.  
