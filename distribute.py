@@ -40,3 +40,13 @@ def load_wordlist(path):
         print(f"Error reading wordlist file: {e}")
         sys.exit(1)
 
+def brute_force(url, paths, timeout, show_codes):
+    for entry in paths:
+        full_url = urljoin(url, entry)
+        try:
+            resp = requests.get(full_url, timeout=timeout, allow_redirects=False)
+            if resp.status_code in show_codes:
+                print(f"[{resp.status_code}] {full_url}")
+        except requests.RequestException as e:
+            print(f"Error requesting {full_url}: {e}")
+
